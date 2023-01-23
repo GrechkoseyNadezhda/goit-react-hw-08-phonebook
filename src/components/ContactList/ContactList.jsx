@@ -1,6 +1,6 @@
-import { List, Btn, Item } from './ContactList.styled';
+// import { List, Btn, Item } from './ContactList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 import { getContacts } from 'redux/selectors';
 
 export const ContactList = () => {
@@ -12,17 +12,17 @@ export const ContactList = () => {
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
   return (
-    <List>
-      {filteredContactsList.map(({ name, phone, id }) => (
-        <Item key={id}>
+    <ul>
+      {filteredContactsList.map(({ name, number, id }) => (
+        <li key={id}>
           <div>
-            {name}:{phone}
+            {name}:{number}
           </div>
-          <Btn type="button" onClick={() => dispatch(deleteContact(id))}>
+          <button type="button" onClick={() => dispatch(deleteContact(id))}>
             delete
-          </Btn>
-        </Item>
+          </button>
+        </li>
       ))}
-    </List>
+    </ul>
   );
 };

@@ -1,10 +1,10 @@
 import React from 'react';
-import { LoaderStyle, Overlay } from './Loader.styled';
+// import { LoaderStyle, Overlay } from './Loader.styled';
 
 export const Loader = () => {
   return (
-    <Overlay>
-      <LoaderStyle />
-    </Overlay>
+    <div>
+      <span></span>
+    </div>
   );
 };

@@ -1,7 +1,6 @@
-import { nanoid } from '@reduxjs/toolkit';
-import { Label, Input, Btn } from './ContactForm.styled';
+// import { label, Input, Btn } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 import { getContacts } from 'redux/selectors';
 
 export const ContactForm = () => {
@@ -19,8 +18,7 @@ export const ContactForm = () => {
     }
     const newContact = {
       name: name,
-      phone: number,
-      id: nanoid(),
+      number: number,
     };
 
     dispatch(addContact(newContact));
@@ -29,27 +27,27 @@ export const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Label>
+      <label>
         Name
-        <Input
+        <input
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-      </Label>
-      <Label>
+      </label>
+      <label>
         Number
-        <Input
+        <input
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-      </Label>
-      <Btn type="submit"> Add contact </Btn>
+      </label>
+      <button type="submit"> Add contact </button>
     </form>
   );
 };
