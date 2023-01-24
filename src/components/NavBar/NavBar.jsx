@@ -9,6 +9,12 @@ export const NavBar = () => {
         component={NavLink}
         to="/register"
         color="inherit"
+        sx={{
+          '&.active': {
+            color: '#d935c0',
+            borderColor: '#000',
+          },
+        }}
       >
         Register
       </Button>
@@ -17,6 +23,12 @@ export const NavBar = () => {
         component={NavLink}
         to="/login"
         color="inherit"
+        sx={{
+          '&.active': {
+            color: '#d935c0',
+            borderColor: '#000',
+          },
+        }}
       >
         Log In
       </Button>

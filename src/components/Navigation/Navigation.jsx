@@ -9,7 +9,18 @@ export const Navigation = () => {
   return (
     <>
       <Box sx={{ display: 'flex', gap: '20px' }}>
-        <Button variant="outlined" component={NavLink} to="/" color="inherit">
+        <Button
+          variant="outlined"
+          component={NavLink}
+          to="/"
+          color="inherit"
+          sx={{
+            '&.active': {
+              color: '#d935c0',
+              borderColor: '#000',
+            },
+          }}
+        >
           Home
         </Button>
         {isLoggedIn && (
@@ -18,14 +29,17 @@ export const Navigation = () => {
             component={NavLink}
             to="/contacts"
             color="inherit"
+            sx={{
+              '&.active': {
+                color: '#d935c0',
+                borderColor: '#000',
+              },
+            }}
           >
             Contacts
           </Button>
         )}
       </Box>
-
-      {/* <NavLink to="/">Home</NavLink>
-      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>} */}
     </>
   );
 };

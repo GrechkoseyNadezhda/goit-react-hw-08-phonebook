@@ -25,10 +25,6 @@ export const UserMenu = () => {
           Logout
         </Button>
       </Box>
-      {/* <p>Welcome, {user.name}</p> */}
-      {/* <button type="button" onClick={() => dispatch(logOut())}>
-          Logout
-        </button> */}
     </>
   );
 };

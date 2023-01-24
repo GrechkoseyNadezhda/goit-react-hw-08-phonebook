@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { registerNewUser } from 'redux/user/userOperations';
-import { Button, Box, TextField } from '@mui/material';
+import { Button, Box, TextField, Container } from '@mui/material';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -19,26 +19,55 @@ export const RegisterForm = () => {
 
   return (
     <>
-      <Box
-        sx={{ display: 'flex', gap: '20px' }}
-        onSubmit={handleSubmit}
-        autoComplete="on"
-        component="form"
+      <Container
+        maxWidth="sm"
+        sx={{ display: 'flex', justifyContent: 'center', paddingTop: '50px' }}
       >
-        <label>
-          Username
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" />
-        </label>
-        <label>
-          Password
-          <input type="password" name="password" />
-        </label>
-        <button type="submit">Register</button>
-      </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '20px',
+            alignItems: 'center',
+          }}
+          onSubmit={handleSubmit}
+          autoComplete="on"
+          component="form"
+        >
+          <TextField
+            type="text"
+            name="name"
+            id="outlined-username"
+            label="Username"
+            variant="outlined"
+            sx={{ width: '320px' }}
+          />
+          <TextField
+            type="email"
+            name="email"
+            id="outlined-email"
+            label="Email"
+            variant="outlined"
+            sx={{ width: '320px' }}
+          />
+          <TextField
+            type="password"
+            name="password"
+            id="outlined-password"
+            label="Password"
+            variant="outlined"
+            sx={{ width: '320px' }}
+          />
+          <Button
+            variant="outlined"
+            type="submit"
+            color="inherit"
+            sx={{ width: '100px', color: '#b553ab' }}
+          >
+            Register
+          </Button>
+        </Box>
+      </Container>
     </>
   );
 };

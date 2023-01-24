@@ -13,7 +13,7 @@ export const AppHeaderBar = () => {
       <AppBar component="nav" position="static">
         <Toolbar>
           <Container
-            maxWidth="sm"
+            maxWidth="md"
             sx={{ display: 'flex', justifyContent: 'space-between' }}
           >
             <Navigation />
