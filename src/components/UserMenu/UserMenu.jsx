@@ -2,10 +2,11 @@ import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/user/userOperations';
 import { useSelector } from 'react-redux';
 import { Button, Box, Typography } from '@mui/material';
+import { selectUser } from 'redux/selectors';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
-  const user = useSelector(state => state.user.user);
+  const user = useSelector(selectUser);
   return (
     <>
       <Box sx={{ display: 'flex', gap: '20px' }}>

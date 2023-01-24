@@ -3,12 +3,13 @@ import { deleteContact } from 'redux/contacts/operations';
 import { getContacts } from 'redux/selectors';
 import { IconButton, ListItem, List, ListItemText } from '@mui/material';
 import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
+import { selectFilter } from 'redux/selectors';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
 
-  const filter = useSelector(state => state.filter);
+  const filter = useSelector(selectFilter);
   const filteredContactsList = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
